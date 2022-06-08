@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nft_app/colors.dart';
 
-class CreatorAndOwnderCard extends StatefulWidget {
-  const CreatorAndOwnderCard({Key? key}) : super(key: key);
+class OwnerCard extends StatelessWidget {
+  String ownerName;
+  String profilePicture;
 
-  @override
-  State<CreatorAndOwnderCard> createState() => _CreatorAndOwnderCardState();
-}
+  OwnerCard({
+    required this.profilePicture,
+    required this.ownerName,
+  });
 
-class _CreatorAndOwnderCardState extends State<CreatorAndOwnderCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,19 +23,19 @@ class _CreatorAndOwnderCardState extends State<CreatorAndOwnderCard> {
         padding: const EdgeInsets.only(right: 5),
         child: Row(
           children: [
-            const CircleAvatar(
+            CircleAvatar(
               radius: 10,
-              backgroundImage: const AssetImage('assets/nfts/first_nft.png'),
+              backgroundImage: AssetImage(profilePicture),
             ),
             const SizedBox(width: 2),
-            const Text(
-              'iamjackrider',
+            Text(
+              ownerName,
               style: const TextStyle(
                 color: Colors.black,
                 fontWeight: FontWeight.w300,
                 fontSize: 13,
               ),
-            )
+            ),
           ],
         ),
       ),

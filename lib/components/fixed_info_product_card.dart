@@ -1,18 +1,27 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:nft_app/colors.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:nft_app/components/creator_card.dart';
 import 'package:nft_app/components/price_card.dart';
-import 'package:nft_app/components/creator_and_owner_card.dart';
+import 'package:nft_app/components/owner_card.dart';
+import 'package:nft_app/screens/home_screen.dart';
 
-class FixedInfoProductCard extends StatefulWidget {
-  const FixedInfoProductCard({Key? key}) : super(key: key);
+class FixedInfoProductCard extends StatelessWidget {
+  String image;
+  String creatorName;
+  String ownerName;
+  double price;
+  bool isFavorite;
 
-  @override
-  State<FixedInfoProductCard> createState() => _FixedInfoProductCardState();
-}
-
-class _FixedInfoProductCardState extends State<FixedInfoProductCard> {
-  bool isFavourite = true;
+  FixedInfoProductCard({
+    required this.image,
+    required this.creatorName,
+    required this.ownerName,
+    required this.price,
+    required this.isFavorite,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +67,7 @@ class _FixedInfoProductCardState extends State<FixedInfoProductCard> {
                 const SizedBox(
                   width: 10,
                 ),
-                PriceCard(),
+                PriceCard(priceETH: price)
               ],
             ),
             const SizedBox(
@@ -68,7 +77,7 @@ class _FixedInfoProductCardState extends State<FixedInfoProductCard> {
               children: [
                 const Text('Creator'),
                 const SizedBox(
-                  width: 60,
+                  width: 50,
                 ),
                 const Text('Owner'),
               ],
@@ -77,13 +86,16 @@ class _FixedInfoProductCardState extends State<FixedInfoProductCard> {
               height: 5,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CreatorAndOwnderCard(),
+                CreatorCard(
+                    profilePicture: 'assets/nfts/first_nft.png',
+                    creatorName: creatorName),
                 const SizedBox(
-                  width: 5,
+                  width: 30,
                 ),
-                CreatorAndOwnderCard(),
+                OwnerCard(
+                    profilePicture: 'assets/nfts/first_nft.png',
+                    ownerName: ownerName)
               ],
             ),
             const SizedBox(
@@ -95,17 +107,7 @@ class _FixedInfoProductCardState extends State<FixedInfoProductCard> {
                 _placeBidButton(),
                 Stack(
                   children: [
-                    IconButton(
-                      color: Colors.orange,
-                      icon: Icon(isFavourite
-                          ? CupertinoIcons.heart_fill
-                          : CupertinoIcons.heart),
-                      onPressed: () => {
-                        setState(() {
-                          isFavourite = !isFavourite;
-                        })
-                      },
-                    ),
+                    MyIconButton(),
                   ],
                 ),
               ],
@@ -113,6 +115,31 @@ class _FixedInfoProductCardState extends State<FixedInfoProductCard> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class MyIconButton extends StatefulWidget {
+  const MyIconButton({Key? key}) : super(key: key);
+
+  @override
+  State<MyIconButton> createState() => _MyIconButtonState();
+}
+
+class _MyIconButtonState extends State<MyIconButton> {
+  bool isFavourite = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      color: Colors.orange,
+      icon:
+          Icon(isFavourite ? CupertinoIcons.heart_fill : CupertinoIcons.heart),
+      onPressed: () => {
+        setState(() {
+          isFavourite = !isFavourite;
+        })
+      },
     );
   }
 }

@@ -1,14 +1,15 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:nft_app/colors.dart';
 
-class PriceCard extends StatefulWidget {
-  const PriceCard({Key? key}) : super(key: key);
+class PriceCard extends StatelessWidget {
+  double priceETH;
 
-  @override
-  State<PriceCard> createState() => _PriceCardState();
-}
+  PriceCard({
+    required this.priceETH,
+  });
 
-class _PriceCardState extends State<PriceCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,10 +19,10 @@ class _PriceCardState extends State<PriceCard> {
           Radius.circular(30),
         ),
       ),
-      child: const Padding(
+      child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-        child: const Text(
-          'ETH 2.25',
+        child: Text(
+          '$priceETH ETH',
           style: TextStyle(
             color: whiteColor,
           ),

@@ -70,23 +70,48 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    ScrollableProduct(),
+                    ScrollableProduct(
+                        image: 'assets/nfts/first_nft.png',
+                        creatorName: 'whoAmI',
+                        ownerName: 'whoAmI',
+                        price: 2.2,
+                        isFavorite: false),
                     const SizedBox(
-                      width: 30,
+                      width: 20,
                     ),
-                    ScrollableProduct(),
+                    ScrollableProduct(
+                        image: 'assets/nfts/second_nft.png',
+                        creatorName: 'whoAmI',
+                        ownerName: 'adadadadda',
+                        price: 2.2,
+                        isFavorite: false),
                     const SizedBox(
-                      width: 30,
+                      width: 20,
                     ),
-                    ScrollableProduct(),
+                    ScrollableProduct(
+                        image: 'assets/nfts/third_nft.png',
+                        creatorName: 'whoAmI',
+                        ownerName: 'adadadadda',
+                        price: 2.2,
+                        isFavorite: false),
                     const SizedBox(
-                      width: 30,
+                      width: 20,
                     ),
-                    ScrollableProduct(),
+                    ScrollableProduct(
+                        image: 'assets/nfts/fourth_nft.png',
+                        creatorName: 'whoAmI',
+                        ownerName: 'adadadadda',
+                        price: 2.2,
+                        isFavorite: false),
                     const SizedBox(
-                      width: 30,
+                      width: 20,
                     ),
-                    ScrollableProduct(),
+                    ScrollableProduct(
+                        image: 'assets/nfts/fifth_nft.png',
+                        creatorName: 'whoAmI',
+                        ownerName: 'adadadadda',
+                        price: 2.2,
+                        isFavorite: false),
                   ],
                 ),
               )
