@@ -1,16 +1,28 @@
-# nft_app
+<h1>Flutter NFT App</h1>
 
-A new Flutter project.
+<h2>Screens: </h2>
 
-## Getting Started
+<p align="center"><img src="git-images/1.png" height="350px"/>
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+<h2>Usage: </h2>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+git clone https://github.com/universal-developer/Flutter-NFT-App
+
+cd Flutter-NFT-App
+
+flutter pub get
+
+flutter run
+
+```
+
+<h2>Link on template: </h2>
+
+```bash
+
+https://www.figma.com/file/DiEhEw3u2QY0unDilNMJr9/Nft-App-(Community)?node-id=36%3A6
+
+```
