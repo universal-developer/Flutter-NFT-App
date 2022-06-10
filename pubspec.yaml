@@ -65,6 +65,7 @@ flutter:
     - assets/nfts/third_nft.png
     - assets/nfts/fourth_nft.png
     - assets/nfts/fifth_nft.png
+    - assets/nfts/sixth_nft.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

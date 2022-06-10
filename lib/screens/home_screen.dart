@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               Container(
                 height: 380,
@@ -72,47 +72,55 @@ class _HomeScreenState extends State<HomeScreen> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     ScrollableProduct(
-                        image: 'assets/nfts/first_nft.png',
-                        creatorName: 'whoAmI',
-                        ownerName: 'whoAmI',
-                        price: 2.2,
-                        isFavorite: false),
+                      image: 'assets/nfts/first_nft.png',
+                      creatorName: 'whoAmI',
+                      ownerName: 'whoAmI',
+                      price: 2.2,
+                      isFavorite: false,
+                    ),
                     const SizedBox(
                       width: 20,
                     ),
                     ScrollableProduct(
-                        image: 'assets/nfts/second_nft.png',
-                        creatorName: 'whoAmI',
-                        ownerName: 'adadadadda',
-                        price: 2.2,
-                        isFavorite: false),
+                      image: 'assets/nfts/second_nft.png',
+                      creatorName: 'whoAmI',
+                      ownerName: 'adadadadda',
+                      price: 2.2,
+                      isFavorite: false,
+                    ),
                     const SizedBox(
                       width: 20,
                     ),
                     ScrollableProduct(
-                        image: 'assets/nfts/third_nft.png',
-                        creatorName: 'whoAmI',
-                        ownerName: 'adadadadda',
-                        price: 2.2,
-                        isFavorite: false),
+                      image: 'assets/nfts/third_nft.png',
+                      creatorName: 'whoAmI',
+                      ownerName: 'adadadadda',
+                      price: 2.2,
+                      isFavorite: false,
+                    ),
                     const SizedBox(
                       width: 20,
                     ),
                     ScrollableProduct(
-                        image: 'assets/nfts/fourth_nft.png',
-                        creatorName: 'whoAmI',
-                        ownerName: 'adadadadda',
-                        price: 2.2,
-                        isFavorite: false),
+                      image: 'assets/nfts/fourth_nft.png',
+                      creatorName: 'whoAmI',
+                      ownerName: 'adadadadda',
+                      price: 2.2,
+                      isFavorite: false,
+                    ),
                     const SizedBox(
                       width: 20,
                     ),
                     ScrollableProduct(
-                        image: 'assets/nfts/fifth_nft.png',
-                        creatorName: 'whoAmI',
-                        ownerName: 'adadadadda',
-                        price: 2.2,
-                        isFavorite: false),
+                      image: 'assets/nfts/fifth_nft.png',
+                      creatorName: 'whoAmI',
+                      ownerName: 'adadadadda',
+                      price: 2.2,
+                      isFavorite: false,
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
                   ],
                 ),
               ),
@@ -129,7 +137,59 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              TopSeller(),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: greyColor.withOpacity(0.5),
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      offset: Offset(0, 5),
+                    ),
+                  ],
+                ),
+                height: 75,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    TopSeller(
+                      profilePicture: 'assets/nfts/first_nft.png',
+                      name: 'universal-developer',
+                      price: 100,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    TopSeller(
+                      profilePicture: 'assets/nfts/second_nft.png',
+                      name: 'who am I',
+                      price: 500,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    TopSeller(
+                      profilePicture: 'assets/nfts/third_nft.png',
+                      name: 'mememememe',
+                      price: 12.2,
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    TopSeller(
+                      profilePicture: 'assets/nfts/sixth_nft.png',
+                      name: 'HuHuHuHuHu',
+                      price: 6.2,
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
