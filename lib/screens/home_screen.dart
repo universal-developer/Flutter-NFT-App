@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nft_app/colors.dart';
 import 'package:nft_app/components/fixed_info_product_card.dart';
 import 'package:nft_app/components/scrollable_product.dart';
+import 'package:nft_app/components/top_seller.dart';
 
 bool isFavourite = true;
 
@@ -114,7 +115,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         isFavorite: false),
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: const Text(
+                  'Top Seller',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              TopSeller(),
             ],
           ),
         ),
