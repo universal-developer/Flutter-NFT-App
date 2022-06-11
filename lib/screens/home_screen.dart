@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nft_app/colors.dart';
-import 'package:nft_app/components/fixed_info_product_card.dart';
-import 'package:nft_app/components/scrollable_product.dart';
-import 'package:nft_app/components/top_seller.dart';
+import '../colors.dart';
+import '../components/product_card.dart';
+import '../components/scrollable_product.dart';
+import '../components/top_seller.dart';
 
 bool isFavourite = true;
 
@@ -23,26 +23,34 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              child: Row(
-                children: [
-                  const Image(
-                    image: const AssetImage('assets/logo.png'),
-                    width: 50,
-                  ),
-                  const Text(
-                    'nftApp',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () => {
+                print('Logo reacts'),
+              },
+              child: Container(
+                child: Row(
+                  children: const [
+                    Image(
+                      image: AssetImage('assets/logo.png'),
+                      width: 50,
                     ),
-                  ),
-                ],
+                    Text(
+                      'nftApp',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             IconButton(
               onPressed: () => {},
               icon: const Icon(CupertinoIcons.bell),
+              color: Colors.black,
+              splashRadius: 20,
             ),
           ],
         ),
@@ -55,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const Align(
                 alignment: Alignment.topLeft,
-                child: const Text(
+                child: Text(
                   'Trending',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -66,13 +74,14 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              Container(
+              SizedBox(
                 height: 380,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     ScrollableProduct(
                       image: 'assets/nfts/first_nft.png',
+                      itemName: 'Example',
                       creatorName: 'whoAmI',
                       ownerName: 'whoAmI',
                       price: 2.2,
@@ -83,6 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     ScrollableProduct(
                       image: 'assets/nfts/second_nft.png',
+                      itemName: 'Example',
                       creatorName: 'whoAmI',
                       ownerName: 'adadadadda',
                       price: 2.2,
@@ -93,6 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     ScrollableProduct(
                       image: 'assets/nfts/third_nft.png',
+                      itemName: 'Example',
                       creatorName: 'whoAmI',
                       ownerName: 'adadadadda',
                       price: 2.2,
@@ -103,6 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     ScrollableProduct(
                       image: 'assets/nfts/fourth_nft.png',
+                      itemName: 'Example',
                       creatorName: 'whoAmI',
                       ownerName: 'adadadadda',
                       price: 2.2,
@@ -113,6 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     ScrollableProduct(
                       image: 'assets/nfts/fifth_nft.png',
+                      itemName: 'Example',
                       creatorName: 'whoAmI',
                       ownerName: 'adadadadda',
                       price: 2.2,
@@ -129,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const Align(
                 alignment: Alignment.topLeft,
-                child: const Text(
+                child: Text(
                   'Top Seller',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -147,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: greyColor.withOpacity(0.5),
                       spreadRadius: 2,
                       blurRadius: 10,
-                      offset: Offset(0, 5),
+                      offset: const Offset(0, 5),
                     ),
                   ],
                 ),
@@ -189,6 +202,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Recent',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ProductCard(
+                productName: 'IDK',
+                ownerName: 'who am i',
+                profilePicure: 'assets/nfts/second_nft.png',
+                productPicture: 'assets/nfts/second_nft.png',
+                price: 4.5,
+              ),
+              ProductCard(
+                productName: 'IDK',
+                ownerName: 'who am i',
+                profilePicure: 'assets/nfts/second_nft.png',
+                productPicture: 'assets/nfts/second_nft.png',
+                price: 4.5,
               ),
             ],
           ),

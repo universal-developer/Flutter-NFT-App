@@ -15,8 +15,8 @@ class OwnerCard extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         color: lightGreyColor,
-        borderRadius: const BorderRadius.all(
-          const Radius.circular(30),
+        borderRadius: BorderRadius.all(
+          Radius.circular(30),
         ),
       ),
       child: Padding(
@@ -28,12 +28,14 @@ class OwnerCard extends StatelessWidget {
               backgroundImage: AssetImage(profilePicture),
             ),
             const SizedBox(width: 2),
-            Text(
-              ownerName,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w300,
-                fontSize: 13,
+            Center(
+              child: Text(
+                ownerName,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w300,
+                  fontSize: 13,
+                ),
               ),
             ),
           ],

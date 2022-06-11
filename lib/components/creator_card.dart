@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nft_app/colors.dart';
+import '../colors.dart';
 
 class CreatorCard extends StatelessWidget {
   String creatorName;

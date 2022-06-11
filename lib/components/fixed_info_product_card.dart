@@ -1,15 +1,13 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:nft_app/colors.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:nft_app/components/creator_card.dart';
-import 'package:nft_app/components/price_card.dart';
-import 'package:nft_app/components/owner_card.dart';
-import 'package:nft_app/screens/home_screen.dart';
+import '../colors.dart';
+import '../components/creator_card.dart';
+import '../components/price_card.dart';
+import '../components/owner_card.dart';
 
 class FixedInfoProductCard extends StatelessWidget {
   String image;
+  String itemName;
   String creatorName;
   String ownerName;
   double price;
@@ -17,6 +15,7 @@ class FixedInfoProductCard extends StatelessWidget {
 
   FixedInfoProductCard({
     required this.image,
+    required this.itemName,
     required this.creatorName,
     required this.ownerName,
     required this.price,
@@ -33,7 +32,7 @@ class FixedInfoProductCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: whiteColor,
           borderRadius: const BorderRadius.all(
-            const Radius.circular(30),
+            Radius.circular(30),
           ),
           border: Border.all(
             color: greyColor,
@@ -58,9 +57,9 @@ class FixedInfoProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    child: const Text(
-                      'The Unkown',
-                      style: const TextStyle(
+                    child: Text(
+                      itemName,
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 15,
                       ),
@@ -76,12 +75,12 @@ class FixedInfoProductCard extends StatelessWidget {
                 height: 5,
               ),
               Row(
-                children: [
-                  const Text('Creator'),
-                  const SizedBox(
+                children: const [
+                  Text('Creator'),
+                  SizedBox(
                     width: 50,
                   ),
-                  const Text('Owner'),
+                  Text('Owner'),
                 ],
               ),
               const SizedBox(
@@ -108,7 +107,7 @@ class FixedInfoProductCard extends StatelessWidget {
                 children: [
                   _placeBidButton(),
                   Stack(
-                    children: [
+                    children: const [
                       MyIconButton(),
                     ],
                   ),
