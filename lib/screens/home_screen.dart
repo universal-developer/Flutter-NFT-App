@@ -219,19 +219,102 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(
                 height: 20,
               ),
-              ProductCard(
-                productName: 'IDK',
-                ownerName: 'who am i',
-                profilePicure: 'assets/nfts/second_nft.png',
-                productPicture: 'assets/nfts/second_nft.png',
-                price: 4.5,
-              ),
-              ProductCard(
-                productName: 'IDK',
-                ownerName: 'who am i',
-                profilePicure: 'assets/nfts/second_nft.png',
-                productPicture: 'assets/nfts/second_nft.png',
-                price: 4.5,
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    right: 30,
+                  ),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/first_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/fourth_nft.png',
+                              price: 2.2),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/second_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/third_nft.png',
+                              price: 2.2),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/fifth_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/sixth_nft.png',
+                              price: 2.2),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/third_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/second_nft.png',
+                              price: 2.2),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/fourth_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/second_nft.png',
+                              price: 2.2),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/second_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/second_nft.png',
+                              price: 2.2),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/first_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/fourth_nft.png',
+                              price: 2.2),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          ProductCard(
+                              productName: 'someone',
+                              productPhoto: 'assets/nfts/sixth_nft.png',
+                              ownerName: 'someone',
+                              profilePicture: 'assets/nfts/third_nft.png',
+                              price: 2.2),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
