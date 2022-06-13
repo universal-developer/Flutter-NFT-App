@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import '../colors.dart';
 import '../components/product_card.dart';
 import '../components/scrollable_product.dart';
@@ -15,9 +16,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  var _selectedTab = _SelectedTab.home;
+
+  void _handleIndexChanged(int i) {
+    setState(() {
+      _selectedTab = _SelectedTab.values[i];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         elevation: 0,
         title: Row(
@@ -320,6 +330,44 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: DotNavigationBar(
+          margin: const EdgeInsets.only(left: 10, right: 10),
+          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+          dotIndicatorColor: lightBlueColor,
+          unselectedItemColor: Colors.grey[300],
+          // enableFloatingNavBar: false,
+          onTap: _handleIndexChanged,
+          items: [
+            /// Home
+            DotNavigationBarItem(
+              icon: const Icon(Icons.home),
+              selectedColor: Colors.black,
+            ),
+
+            /// Likes
+            DotNavigationBarItem(
+              icon: const Icon(CupertinoIcons.square_grid_2x2),
+              selectedColor: Colors.black,
+            ),
+
+            /// Search
+            DotNavigationBarItem(
+              icon: const Icon(CupertinoIcons.shopping_cart),
+              selectedColor: Colors.black,
+            ),
+
+            /// Profile
+            DotNavigationBarItem(
+              icon: const Icon(Icons.person),
+              selectedColor: Colors.black,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
+
+enum _SelectedTab { home, favorite, search, person }
